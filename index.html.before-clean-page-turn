@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>给玉姐的一小段时光</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600&family=Playfair+Display:ital,wght@400;500;600&display=swap');
+
+:root {
+    --paper: #f4efe7;
+    --ink: #332c27;
+    --soft: #8d8177;
+    --line: rgba(51,44,39,.18);
+    --accent: #8c554b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Serif SC", serif;
+    overflow-x: hidden;
+}
+
+/* 胶片颗粒 */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .055;
+    z-index: 999;
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
+
+/* 顶部小标签 */
+.chapter {
+    font-family: "Playfair Display", serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--soft);
+    text-transform: uppercase;
+}
+
+/* =========================
+   开场
+========================= */
+
+.hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 25px;
+    position: relative;
+}
+
+.hero .tiny {
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: var(--soft);
+    margin-bottom: 35px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", "Noto Serif SC", serif;
+    font-weight: 400;
+    font-size: clamp(42px, 12vw, 75px);
+    letter-spacing: 3px;
+    line-height: 1.25;
+}
+
+.hero h1 span {
+    display: block;
+    font-family: "Noto Serif SC", serif;
+    font-size: .48em;
+    letter-spacing: 9px;
+    margin-top: 15px;
+}
+
+.hero .intro {
+    margin-top: 35px;
+    color: var(--soft);
+    font-size: 14px;
+    line-height: 2.2;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 30px;
+    font-family: "Playfair Display", serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--soft);
+    animation: breathe 2.5s infinite;
+}
+
+.scroll::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: var(--line);
+    margin: 12px auto 0;
+}
+
+@keyframes breathe {
+    0%,100% { opacity: .4; }
+    50% { opacity: 1; }
+}
+
+/* =========================
+   普通章节
+========================= */
+
+.chapter-intro {
+    min-height: 55svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 28px;
+}
+
+.chapter-intro h2 {
+    font-size: clamp(30px, 8vw, 50px);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+.chapter-intro p {
+    margin-top: 25px;
+    color: var(--soft);
+    line-height: 2.2;
+    font-size: 15px;
+}
+
+/* =========================
+   照片
+========================= */
+
+.memory {
+    padding: 70px 20px 120px;
+}
+
+.photo-wrap {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.photo {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    max-height: 75svh;
+    background: #ddd;
+}
+
+.photo-caption {
+    padding: 25px 8px 0;
+}
+
+.photo-number {
+    font-family: "Playfair Display", serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--soft);
+}
+
+.photo-caption h3 {
+    margin-top: 13px;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+.photo-caption p {
+    margin-top: 12px;
+    color: var(--soft);
+    font-size: 14px;
+    line-height: 2.1;
+}
+
+/* 每张照片之间的空白 */
+.memory + .memory {
+    padding-top: 0;
+}
+
+/* =========================
+   分隔文字
+========================= */
+
+.quote {
+    min-height: 70svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 35px;
+    text-align: center;
+}
+
+.quote p {
+    font-size: clamp(22px, 6vw, 34px);
+    line-height: 2;
+    font-weight: 300;
+}
+
+.quote small {
+    display: block;
+    margin-top: 30px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--soft);
+}
+
+/* =========================
+   信
+========================= */
+
+.letter {
+    min-height: 100svh;
+    padding: 100px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.letter-card {
+    max-width: 600px;
+    margin: auto;
+}
+
+.letter-title {
+    font-family: "Playfair Display", serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--soft);
+}
+
+.letter h2 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 25px;
+}
+
+.letter-content {
+    margin-top: 45px;
+    font-size: 16px;
+    line-height: 2.5;
+}
+
+.signature {
+    margin-top: 50px;
+    text-align: right;
+    font-family: "Playfair Display", serif;
+    font-size: 15px;
+}
+
+/* =========================
+   最终生日页
+========================= */
+
+.final {
+    min-height: 100svh;
+    background: #211d1a;
+    color: #eee7dd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 35px;
+}
+
+.final .small {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 5px;
+    font-size: 12px;
+    opacity: .65;
+}
+
+.final h2 {
+    font-family: "Playfair Display", "Noto Serif SC", serif;
+    font-size: clamp(42px, 12vw, 70px);
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+.final h3 {
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+.final p {
+    margin-top: 35px;
+    line-height: 2.3;
+    font-size: 14px;
+    color: #c8beb4;
+}
+
+.final .heart {
+    margin-top: 45px;
+    font-size: 25px;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* 音乐按钮 */
+
+.music-button {
+    position: fixed;
+    right: 18px;
+    top: 18px;
+    z-index: 1000;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(51,44,39,.2);
+
+    background: rgba(244,239,231,.8);
+
+    color: var(--ink);
+    font-size: 16px;
+}
+
+/* 滚动出现 */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+        opacity 1.1s ease,
+        transform 1.1s cubic-bezier(.22, .61, .36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}/* 手机适配 */
+
+@media (max-width: 420px) {
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .chapter-intro {
+        min-height: 60svh;
+    }
+
+    .photo {
+        max-height: 65svh;
+    }
+
+}
+	img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 14px 35px rgba(51, 44, 39, 0.10);
+}
+
+img:hover {
+    transform: scale(1.015);
+}
+.gift-button {
+    margin-top: 42px;
+    padding: 15px 26px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 13px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition:
+        background .4s ease,
+        color .4s ease,
+        transform .4s ease;
+}
+
+.gift-button span {
+    display: block;
+    margin-top: 5px;
+    font-size: 8px;
+    letter-spacing: 3px;
+    opacity: .55;
+}
+
+.gift-button:active {
+    transform: scale(.96);
+}
+
+.gift-button:hover {
+    background: var(--ink);
+    color: var(--paper);
+}
+body.gift-open .hero {
+    opacity: 0;
+    transform: scale(1.04);
+    pointer-events: none;
+}
+
+body.gift-open .gift-button {
+    opacity: 0;
+    transform: translateY(10px) scale(.96);
+}
+
+body.gift-open main {
+    opacity: 1;
+}
+
+.hero {
+    transition:
+        opacity 1s ease,
+        transform 1.2s ease;
+}
+body:not(.gift-open) section:not(.hero) {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+body.gift-open section:not(.hero) {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+/* ===== 翻页页面内部排版 ===== */
+
+body.gift-open section.story-page.page-active {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 70px 24px 90px !important;
+    gap: 0 !important;
+}
+
+/* 章节标题页 */
+body.gift-open section.story-page.page-active.chapter-intro {
+    text-align: center !important;
+    justify-content: center !important;
+}
+
+body.gift-open section.story-page.page-active.chapter-intro h2 {
+    font-size: clamp(34px, 9vw, 52px) !important;
+    line-height: 1.45 !important;
+    margin-top: 0 !important;
+}
+
+body.gift-open section.story-page.page-active.chapter-intro p {
+    font-size: 14px !important;
+    line-height: 2 !important;
+    margin-top: 24px !important;
+}
+
+/* 普通照片页 */
+body.gift-open section.story-page.page-active.memory,
+body.gift-open section.story-page.page-active.memory.memory-reverse {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+/* 图片区域 */
+body.gift-open section.story-page.page-active .memory-image {
+    width: min(88vw, 430px) !important;
+    margin: 0 auto 26px !important;
+}
+
+/* 图片 */
+body.gift-open section.story-page.page-active .memory-image img {
+    width: 100% !important;
+    max-height: 58svh !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+}
+
+/* 文字 */
+body.gift-open section.story-page.page-active .memory-text {
+    width: min(88vw, 430px) !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+/* 标题 */
+body.gift-open section.story-page.page-active .memory-text h3 {
+    font-size: 22px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 10px !important;
+}
+
+/* 正文 */
+body.gift-open section.story-page.page-active .memory-text p {
+    font-size: 14px !important;
+    line-height: 2 !important;
+    color: var(--soft) !important;
+    margin: 0 !important;
+}
+
+/* 家庭照片页 */
+body.gift-open section.story-page.page-active.family {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+body.gift-open section.story-page.page-active.family img {
+    width: min(90vw, 500px) !important;
+    max-height: 62svh !important;
+    object-fit: contain !important;
+}
+
+/* 最近照片页 */
+body.gift-open section.story-page.page-active.recent {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+body.gift-open section.story-page.page-active.recent .recent-heading {
+    margin-bottom: 18px !important;
+}
+
+body.gift-open section.story-page.page-active.recent .recent-heading h2 {
+    font-size: clamp(28px, 7vw, 42px) !important;
+    line-height: 1.45 !important;
+}
+
+body.gift-open section.story-page.page-active.recent .recent-main {
+    width: min(88vw, 430px) !important;
+}
+
+body.gift-open section.story-page.page-active.recent .recent-main img {
+    width: 100% !important;
+    max-height: 48svh !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+}
+
+body.gift-open section.story-page.page-active.recent .recent-text {
+    margin: 18px auto !important;
+}
+
+body.gift-open section.story-page.page-active.recent .recent-pair {
+    display: flex !important;
+    gap: 10px !important;
+    width: min(88vw, 430px) !important;
+}
+
+body.gift-open section.story-page.page-active.recent .recent-pair img {
+    width: calc(50% - 5px) !important;
+    max-height: 22svh !important;
+    object-fit: cover !important;
+}
+
+/* 信 */
+body.gift-open section.story-page.page-active.letter {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    text-align: left !important;
+    padding-left: 34px !important;
+    padding-right: 34px !important;
+}
+
+body.gift-open section.story-page.page-active.letter h2 {
+    font-size: 34px !important;
+    margin-bottom: 28px !important;
+}
+
+body.gift-open section.story-page.page-active .letter-body {
+    width: min(88vw, 500px) !important;
+}
+
+body.gift-open section.story-page.page-active .letter-body p {
+    font-size: 15px !important;
+    line-height: 2.2 !important;
+    margin-bottom: 18px !important;
+}
+
+/* 最后一页 */
+body.gift-open section.story-page.page-active.final {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+body.gift-open section.story-page.page-active.final h2 {
+    font-size: clamp(48px, 13vw, 76px) !important;
+    line-height: .95 !important;
+}
+
+body.gift-open section.story-page.page-active.final-name {
+    font-size: 28px !important;
+}
+
+/* 签名页 */
+body.gift-open section.story-page.page-active.signature-section {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+/* ===== 翻页相册：最终版 ===== */
+
+body {
+    overflow-x: hidden;
+}
+
+body.gift-open {
+    overflow: hidden !important;
+    height: 100svh;
+}
+
+body.gift-open .hero {
+    display: none !important;
+}
+
+body.gift-open section.story-page {
+    position: fixed !important;
+    inset: 0 !important;
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    width: 100%;
+    height: 100svh;
+    min-height: 100svh;
+    overflow: hidden;
+}
+
+body.gift-open section.story-page.page-active {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    width: 100%;
+    height: 100svh;
+    min-height: 100svh;
+    overflow: hidden;
+    animation: pageIn .65s ease both;
+}
+
+body.gift-open section.story-page.page-active.reveal:not(.page-turn-in-right):not(.page-turn-in-left) {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+body.gift-open section.story-page.page-active .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+@keyframes pageInRight {
+    from {
+        opacity: 0;
+        transform: translateX(34px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pageInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-34px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+body.gift-open section.story-page.page-active.page-from-right {
+    animation: pageInRight .65s cubic-bezier(.22,.61,.36,1) both !important;
+}
+
+body.gift-open section.story-page.page-active.page-from-left {
+    animation: pageInLeft .65s cubic-bezier(.22,.61,.36,1) both !important;
+}
+
+.page-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 18px;
+    z-index: 5000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .5s ease;
+}
+
+body.gift-open .page-nav {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.page-nav button {
+    border: 1px solid var(--line);
+    background: rgba(244,239,231,.92);
+    color: var(--ink);
+    padding: 9px 14px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+.page-nav button:active {
+    transform: scale(.96);
+}
+
+.page-number {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--soft);
+    min-width: 42px;
+    text-align: center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<button class="music-button" id="musicButton">
+    ♪
+</button>
+<audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<section class="hero">
+
+    <div class="tiny">
+        A LITTLE GIFT FOR YOU
+    </div>
+
+    <h1>
+        给玉姐
+        <span>的一小段时光</span>
+    </h1>
+
+    <p class="intro">
+        有一些照片已经很久了。<br>
+        今天突然想把它们重新放在一起。
+    </p>
+
+    <button class="gift-button" id="giftButton" type="button">
+    打开这份礼物
+    <span>OPEN THE GIFT</span>
+</button>
+
+</section>
+
+<section class="chapter-intro reveal">
+    <div class="chapter-number">01</div>
+    <div class="chapter-title">很久以前</div>
+    <p>
+        那时候我们都还很小。<br>
+        有些日子，现在回头看，才发现它们那么珍贵。
+    </p>
+</section><section class="memory reveal">
+    <div class="memory-image">
+        <img src="images/照片 101.jpg" alt="16年前的生日">
+    </div>
+
+    <div class="memory-text">
+        <span>16 YEARS AGO</span>
+        <h2>那一年，<br>也是你的生日。</h2>
+        <p>
+            时间已经走了很远很远。<br>
+            但照片留下来的那一刻，<br>
+            好像一直没有离开。
+        </p>
+    </div>
+</section><section class="memory memory-reverse reveal">
+    <div class="memory-image">
+        <img src="images/照片 019.jpg" alt="小时候的我们">
+    </div>
+
+    <div class="memory-text">
+        <span>WHEN WE WERE LITTLE</span>
+        <h2>你陪着我，<br>慢慢长大。</h2>
+        <p>
+            那时候的我们，<br>
+            还不知道时间会走得这么快。
+        </p>
+    </div>
+</section>
+
+<section class="memory reveal">
+    <div class="memory-image">
+        <img src="images/IMG_20130617_141103.jpg" alt="小时候的姐姐和我">
+    </div>
+
+    <div class="memory-text">
+        <span>A LONG TIME AGO</span>
+        <h2>原来，<br>我们已经认识这么久了。</h2>
+        <p>
+            从小时候到现在，<br>
+            有些关系一直都没有改变。
+        </p>
+    </div>
+</section><section class="memory reveal">
+    <div class="memory-image">
+        <img src="images/照片 465.jpg" alt="姐姐和外婆">
+    </div>
+
+    <div class="memory-text">
+        <span>FAMILY</span>
+        <h2>有些温柔，<br>一直都在。</h2>
+        <p>
+            后来才慢慢明白，<br>
+            家人之间的陪伴，<br>
+            是时间带不走的东西。
+        </p>
+    </div>
+</section>
+
+<section class="memory memory-reverse reveal">
+    <div class="memory-image">
+        <img src="images/IMG_20211113_161602.jpg" alt="姐姐和外婆">
+    </div>
+
+    <div class="memory-text">
+        <span>THOSE DAYS</span>
+        <h2>照片会旧，<br>记忆不会。</h2>
+        <p>
+            我们都在长大，<br>
+            可那些一起走过的日子，<br>
+            一直被好好留着。
+        </p>
+    </div>
+</section><section class="family reveal">
+    <div class="family-title">
+        <span>TOGETHER</span>
+        <h2>我们一直<br>都在这里。</h2>
+    </div>
+
+    <div class="family-grid">
+        <img src="images/mmexport1361708061269.jpg" alt="一家人">
+        <img src="images/mmexport1361708482492.jpg" alt="一家人">
+        <img src="images/mmexport1374506868704.jpg" alt="一家人">
+    </div>
+
+    <p class="family-note">
+        很多人的故事，<br>
+        最后都会变成一家人的故事。
+    </p>
+</section><section class="chapter-intro chapter-later reveal">
+    <div class="chapter-number">02</div>
+
+    <div class="chapter-title">后来</div>
+
+    <p>
+        不知不觉，<br>
+        我们都已经长大了。
+    </p>
+
+    <div class="chapter-line"></div>
+
+    <p class="small-note">
+        可是每次见面，<br>
+        好像还是小时候的我们。
+    </p>
+</section><section class="recent reveal">
+    <div class="recent-heading">
+        <span>2026 · NOW</span>
+        <h2>而现在，<br>我们还是会一起出发。</h2>
+    </div>
+
+    <div class="recent-main">
+        <img src="images/IMG20260926201940.jpg" alt="2026年的我们">
+    </div>
+
+    <div class="recent-text">
+        <p>
+            以前的照片记录成长，<br>
+            而现在的照片，记录我们还在一起。
+        </p>
+    </div>
+
+    <div class="recent-pair">
+        <img src="images/IMG20260927131301.jpg" alt="最近的我们">
+        <img src="images/IMG20260927143017.jpg" alt="最近一起出游">
+    </div>
+</section><section class="letter reveal">
+    <div class="letter-label">
+        A LETTER TO YOU
+    </div>
+
+    <h2>
+        玉姐，
+    </h2>
+
+    <div class="letter-body">
+        <p>
+            如果把这些照片一张一张翻过去，
+            我才发现，我们已经一起走过了这么多年。
+        </p>
+
+        <p>
+            从很小很小的时候，
+            到现在各自慢慢长大。
+        </p>
+
+        <p>
+            以前觉得“姐姐”只是一个称呼，
+            后来才发现，
+            它其实是生命里很特别的一种陪伴。
+        </p>
+
+        <p>
+            谢谢你一直都是我的姐姐。
+        </p>
+
+        <p>
+            也希望以后的很多年里，
+            我们还会有更多照片，
+            更多一起出去玩的日子，
+            更多可以回头看的故事。
+        </p>
+    </div>
+</section><section class="final reveal">
+    <div class="final-inner">
+        <div class="final-small">
+            FOR MY DEAR SISTER
+        </div>
+
+        <h2>
+            HAPPY<br>
+            BIRTHDAY
+        </h2>
+
+        <div class="final-name">
+            玉姐
+        </div>
+
+        <p class="final-wish">
+            愿以后每一年，<br>
+            都有值得记住的好日子。
+        </p>
+    </div>
+</section><section class="signature-section reveal">
+    <div class="signature-line"></div>
+
+    <p class="signature">
+        杨杨
+    </p>
+
+    <p class="signature-date">
+        送给玉姐
+    </p>
+</section>
+
+<div class="page-nav" id="pageNav">
+    <button id="prevPage" type="button">‹ 上一页</button>
+
+    <div class="page-number" id="pageNumber">
+        01 / 12
+    </div>
+
+    <button id="nextPage" type="button">下一页 ›</button>
+</div>
+
+<script>
+const musicButton = document.getElementById("musicButton");
+const bgMusic = document.getElementById("bgMusic");
+
+musicButton.addEventListener("click", () => {
+    if (bgMusic.paused) {
+        bgMusic.play().then(() => {
+            musicButton.textContent = "Ⅱ";
+        }).catch(() => {});
+    } else {
+        bgMusic.pause();
+        musicButton.textContent = "♪";
+    }
+});
+
+const giftButton = document.getElementById("giftButton");
+
+giftButton.addEventListener("click", () => {
+    document.body.classList.add("gift-open");
+
+    bgMusic.volume = 0.35;
+
+    bgMusic.play().then(() => {
+        musicButton.textContent = "Ⅱ";
+    }).catch(() => {
+        musicButton.textContent = "♪";
+    });
+});
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    },
+    {
+        threshold: 0.12
+    }
+);
+
+reveals.forEach(item => observer.observe(item));
+const storyPages = Array.from(
+    document.querySelectorAll("body > section:not(.hero)")
+);
+
+const prevPage = document.getElementById("prevPage");
+const nextPage = document.getElementById("nextPage");
+const pageNumber = document.getElementById("pageNumber");
+
+let currentPage = 0;
+
+function showPage(index, direction = 1) {
+    if (index < 0 || index >= storyPages.length) {
+        return;
+    }
+
+    storyPages.forEach((page, i) => {
+        page.classList.toggle("story-page", true);
+        page.classList.toggle("page-active", i === index);
+        page.classList.remove("page-from-right", "page-from-left");
+    });
+
+    const activePage = storyPages[index];
+
+    if (index !== currentPage || !activePage.classList.contains("page-from-right")) {
+        activePage.classList.add(
+            direction >= 0 ? "page-from-right" : "page-from-left"
+        );
+    }
+
+    currentPage = index;
+
+    pageNumber.textContent =
+        String(currentPage + 1).padStart(2, "0") +
+        " / " +
+        String(storyPages.length).padStart(2, "0");
+
+    prevPage.disabled = currentPage === 0;
+    nextPage.disabled = currentPage === storyPages.length - 1;
+}
+
+prevPage.addEventListener("click", () => {
+    showPage(currentPage - 1);
+});
+
+nextPage.addEventListener("click", () => {
+    showPage(currentPage + 1);
+});
+
+showPage(0);
+
+let touchStartX = 0;
+let touchStartY = 0;
+
+document.addEventListener("touchstart", event => {
+    if (!document.body.classList.contains("gift-open")) {
+        return;
+    }
+
+    if (event.touches.length !== 1) {
+        return;
+    }
+
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+}, { passive: true });
+
+document.addEventListener("touchend", event => {
+    if (!document.body.classList.contains("gift-open")) {
+        return;
+    }
+
+    if (!touchStartX) {
+        return;
+    }
+
+    const touchEndX = event.changedTouches[0].clientX;
+    const touchEndY = event.changedTouches[0].clientY;
+
+    const dx = touchEndX - touchStartX;
+    const dy = touchEndY - touchStartY;
+
+    touchStartX = 0;
+    touchStartY = 0;
+
+    // 只有明显的横向滑动才翻页
+    if (Math.abs(dx) < 55 || Math.abs(dx) < Math.abs(dy) * 1.2) {
+        return;
+    }
+
+    if (dx < 0) {
+        showPage(currentPage + 1, 1);
+    } else {
+        showPage(currentPage - 1, -1);
+    }
+}, { passive: true });
+</script>
+
+</body>
+</html>
